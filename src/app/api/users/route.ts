@@ -1,5 +1,12 @@
 const GET = async() => {
-    return Response.json({id: 1, name: 'Facu', mail: 'facundo_vila_71@hotmail.com'})
+
+    const response = await fetch("https://jsonplaceholder.typicode.com/users")
+    const parsedData = await response.json();
+    return Response.json(parsedData);
 }
 
-export {GET}
+const POST = () => {
+    return Response.json({"message": "POST data"})
+}
+
+export {GET, POST};
